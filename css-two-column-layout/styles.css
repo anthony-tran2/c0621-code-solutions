@@ -3,11 +3,30 @@
 }
 
 p {
-  font-weight: 400;
+  line-height: 175%;
+  color: #464646;
 }
 
-#subtitle {
-  max-width: 650;
+h1 {
+  font-size: 38pt;
+  letter-spacing: 3px;
+}
+
+.column-one-half {
+  width: 50%;
+}
+
+.column-one-third {
+  width: calc(100% / 3);
+}
+
+.column-two-third {
+  width: calc(200% / 3);
+}
+
+.header {
+  max-width: 700px;
+  margin: auto;
 }
 
 .bold {
@@ -21,6 +40,7 @@ p {
 
 .row {
   display: flex;
+  width: 100%;
 }
 
 .center {
