@@ -1,0 +1,29 @@
+* {
+  font-family: 'Karla', sans-serif;
+}
+
+p {
+  font-weight: 400;
+}
+
+#subtitle {
+  max-width: 650;
+}
+
+.bold {
+  font-weight: 700;
+}
+
+.container {
+  max-width: 1000px;
+  margin: auto;
+}
+
+.row {
+  display: flex;
+}
+
+.center {
+  justify-content: center;
+  text-align: center;
+}
