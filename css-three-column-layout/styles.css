@@ -5,29 +5,29 @@
 }
 
 img {
-  width: 20%;
-  z-index: 1;
+  width: 50px;
+  height: 50px;
   background-color: white;
 }
 
 h2 {
   font-size: 26px;
+  margin-top: 4rem;
+}
+
+h3 {
+  margin-top: 20px;
+  margin-bottom: 10px;
 }
 
 p {
   font-size: 9.5pt;
   max-width: 220px;
   line-height: 150%;
+  margin-top: 0;
 }
 
-.container-one {
-  max-width: 800px;
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: 4rem;
-}
-
-.container-two {
+.container {
   max-width: 800px;
   margin-left: auto;
   margin-right: auto;
@@ -57,29 +57,16 @@ p {
 .center {
   text-align: center;
   justify-content: center;
-}
-
-.positioned-down-less {
-  position: relative;
-  top: 10px;
-}
-
-.positioned-down {
-  position: relative;
-  top: 20px;
-}
-
-.positioned-down-more {
-  position: relative;
-  top: 30px;
+  align-items: center;
 }
 
 .background-circle {
   border-radius: 50%;
-  width: 85px;
-  height: 85px;
+  width: 100px;
+  height: 100px;
   background-color: white;
-  position: relative;
-  bottom: 190px;
-  left: 90px;
+  justify-content: center;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 10px;
 }
