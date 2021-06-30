@@ -1,3 +1,77 @@
+a {
+  text-decoration: none;
+}
+
+p {
+  font-size: 8pt;
+}
+
+a:visited {
+  color: white;
+}
+
+header > div > img {
+  width: 8rem;
+  margin-right: 36rem;
+}
+
+.container {
+  max-width: 80px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 .row {
   width: 100%;
+  display: flex;
+}
+
+.column-full {
+  width: 100%;
+}
+
+.tiempos-normal {
+  font-family: 'Tiempos Headline', sans-serif;
+  font-weight: normal;
+  font-style: normal;
+}
+
+.tiempos-italic {
+  font-family: 'Tiempos Headline', sans-serif;
+  font-weight: 300;
+  font-style: italic;
+}
+
+.avenir {
+  font-family: 'Avenir', sans-serif;
+  font-style: normal;
+  font-weight: 500;
+}
+
+.gray {
+  color: #6e6e6e;
+}
+
+.header-gray {
+  color: #a0a0a0;
+}
+
+.white {
+  color: white;
+}
+
+.get-started {
+  background: #294465;
+  height: 2rem;
+  width: 8rem;
+  text-align: center;
+  margin-top: 2rem;
+  margin-left: 60rem;
+  padding-top: 0.5rem;
+  font-size: 10pt;
+}
+
+#learn-more {
+  margin-right: 4rem;
+  margin-left: 4rem;
 }
