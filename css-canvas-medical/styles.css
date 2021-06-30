@@ -69,9 +69,14 @@ header > div > img {
   margin-left: 60rem;
   padding-top: 0.5rem;
   font-size: 10pt;
+  border-radius: 2px;
 }
 
 #learn-more {
   margin-right: 4rem;
   margin-left: 4rem;
+}
+
+#hero {
+  width: 80rem;
 }
