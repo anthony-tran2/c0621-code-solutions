@@ -3,21 +3,40 @@ a {
 }
 
 p {
-  font-size: 8pt;
+  font-size: 9pt;
 }
 
 a:visited {
+  color: #6e6e6e;
+}
+
+div.center > a:visited {
   color: white;
 }
 
 .container {
-  max-width: 80rem;
-  margin-left: auto;
-  margin-right: auto;
+  max-width: 1380px;
+  margin: auto;
 }
 
 .row {
   display: flex;
+}
+
+.col-1,
+.col-2,
+.col-3,
+.col-4,
+.col-5,
+.col-6,
+.col-7,
+.col-8,
+.col-9,
+.col-10,
+.col-11,
+.col-12 {
+  position: relative;
+  width: 100%;
 }
 
 .column-full {
@@ -54,14 +73,95 @@ a:visited {
   color: white;
 }
 
-.get-started {
+.get-started-anchor {
   background: #294465;
-  height: 2rem;
+  height: 2.5rem;
   width: 8rem;
-  text-align: center;
-  margin-top: 2rem;
-  margin-left: 60rem;
-  padding-top: 0.5rem;
+  padding-top: 9px;
   font-size: 10pt;
-  border-radius: 2px;
+  border-radius: 3px;
+  margin: auto;
+}
+
+.center-text {
+  text-align: center;
+}
+
+.col-1 {
+  flex-basis: 23%;
+}
+
+.col-2 {
+  flex-basis: 65%;
+}
+
+.col-3 {
+  flex-basis: 12%;
+}
+
+.col-4 {
+  flex-basis: 11.5%;
+}
+
+.col-5 {
+  flex-basis: 25%;
+}
+
+.col-6 {
+  flex-basis: 19%;
+}
+
+.col-7 {
+  flex-basis: 15%;
+}
+
+.margin-top-2rem {
+  margin-top: 2rem;
+}
+
+.true-center {
+  justify-content: center;
+  align-items: center;
+}
+
+.font-size-10 {
+  font-size: 10pt;
+}
+
+.font-size-11 {
+  font-size: 11pt;
+}
+
+.margin-left-right-50px {
+  margin-left: 50px;
+  margin-right: 50px;
+}
+
+.background-gray {
+  background-color: #fafafa;
+}
+
+.justify-evenly {
+  justify-content: space-evenly;
+}
+
+.line-spacing {
+  line-height: 2rem;
+}
+
+.padding-top-bottom-3rem {
+  padding: 3rem 0;
+}
+
+.padding-top-1rem-bottom-2rem {
+  padding-bottom: 2rem;
+  padding-top: 1rem;
+}
+
+.background-dark-gray {
+  background-color: #525350;
+}
+
+.logo-width {
+  width: 8rem;
 }
