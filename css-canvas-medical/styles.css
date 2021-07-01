@@ -162,7 +162,7 @@ div.white > a:visited {
 }
 
 .col-13 {
-  flex-basis: 47.7%;
+  flex-basis: 38.7%;
 }
 
 .margin-top-2rem {
@@ -251,6 +251,10 @@ div.white > a:visited {
 
 .margin-left-33px {
   margin-left: 33px;
+}
+
+.header-bottom-border {
+  border-bottom: #e6e9ec solid 1px;
 }
 
 #contact-us {
