@@ -10,19 +10,13 @@ a:visited {
   color: white;
 }
 
-header > div > img {
-  width: 8rem;
-  margin-right: 36rem;
-}
-
 .container {
-  max-width: 80px;
+  max-width: 80rem;
   margin-left: auto;
   margin-right: auto;
 }
 
 .row {
-  width: 100%;
   display: flex;
 }
 
@@ -70,13 +64,4 @@ header > div > img {
   padding-top: 0.5rem;
   font-size: 10pt;
   border-radius: 2px;
-}
-
-#learn-more {
-  margin-right: 4rem;
-  margin-left: 4rem;
-}
-
-#hero {
-  width: 80rem;
 }
