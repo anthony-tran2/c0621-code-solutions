@@ -3,14 +3,30 @@ a {
 }
 
 p {
-  font-size: 9pt;
+  font-size: 10pt;
 }
 
 a:visited {
   color: #6e6e6e;
 }
 
+img {
+  width: 8rem;
+}
+
+div.filter > img {
+  height: auto;
+  width: 1280px;
+  margin-top: 4rem;
+  margin-bottom: 4rem;
+  position: relative;
+}
+
 div.center > a:visited {
+  color: white;
+}
+
+div.white > a:visited {
   color: white;
 }
 
@@ -34,7 +50,8 @@ div.center > a:visited {
 .col-9,
 .col-10,
 .col-11,
-.col-12 {
+.col-12,
+.col-13 {
   position: relative;
   width: 100%;
 }
@@ -83,6 +100,15 @@ div.center > a:visited {
   margin: auto;
 }
 
+.contact-us-anchor {
+  background: #294465;
+  height: 2.5rem;
+  width: 1rem;
+  padding: 10px 16px;
+  border-radius: 3px;
+  margin: auto;
+}
+
 .center-text {
   text-align: center;
 }
@@ -104,7 +130,7 @@ div.center > a:visited {
 }
 
 .col-5 {
-  flex-basis: 25%;
+  flex-basis: 28%;
 }
 
 .col-6 {
@@ -113,6 +139,30 @@ div.center > a:visited {
 
 .col-7 {
   flex-basis: 15%;
+}
+
+.col-8 {
+  flex-basis: 40%;
+}
+
+.col-9 {
+  flex-basis: 20%;
+}
+
+.col-10 {
+  flex-basis: 10%;
+}
+
+.col-11 {
+  flex-basis: 31%;
+}
+
+.col-12 {
+  flex-basis: 50%;
+}
+
+.col-13 {
+  flex-basis: 47.7%;
 }
 
 .margin-top-2rem {
@@ -145,12 +195,20 @@ div.center > a:visited {
   justify-content: space-evenly;
 }
 
-.line-spacing {
+.line-height-2rem {
   line-height: 2rem;
+}
+
+.padding-top-bottom-2rem {
+  padding: 2rem 0;
 }
 
 .padding-top-bottom-3rem {
   padding: 3rem 0;
+}
+
+.padding-top-bottom-4rem {
+  padding: 4rem 0;
 }
 
 .padding-top-1rem-bottom-2rem {
@@ -162,6 +220,39 @@ div.center > a:visited {
   background-color: #525350;
 }
 
-.logo-width {
-  width: 8rem;
+.margin-top-1rem {
+  margin-top: 1rem;
+}
+
+.line-height-1dot25rem {
+  line-height: 1.25rem;
+}
+
+.line-height-1dot5rem {
+  line-height: 1.5rem;
+}
+
+,
+.line-height-3rem {
+  line-height: 3rem;
+}
+
+.margin-right-9rem {
+  margin-right: 9rem;
+}
+
+.position-absolute {
+  z-index: 1;
+}
+
+.align-items.center {
+  align-items: center;
+}
+
+.margin-left-33px {
+  margin-left: 33px;
+}
+
+#contact-us {
+  color: white;
 }
