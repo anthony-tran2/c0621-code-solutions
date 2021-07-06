@@ -1,0 +1,38 @@
+* {
+  font-family: 'Barlow', sans-serif;
+  text-align: center;
+}
+
+img {
+  width: 90%;
+}
+
+.container {
+  width: 1600px;
+  margin: auto;
+}
+
+.row {
+  display: flex;
+}
+
+.center {
+  justify-content: center;
+  align-items: center;
+}
+
+.column-one-fourth {
+  width: 25%;
+}
+
+.justify-between {
+  justify-content: space-between;
+}
+
+.small-icon {
+  width: 20%;
+}
+
+.margin-top-2rem {
+  margin-top: 2rem;
+}

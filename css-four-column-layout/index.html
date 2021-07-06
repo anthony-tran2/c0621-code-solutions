@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>CSS Four Column Layout</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="container">
+    <div class="row center">
+      <h1>How It Works</h1>
+    </div>
+    <div class="row center justify-betweeen">
+      <div class="column-one-fourth">
+        <img src="images/screen-1.png" alt="screen with settings">
+      </div>
+      <div class="column-one-fourth">
+        <img src="images/screen-2.png" alt="screen with pop-up">
+      </div>
+      <div class="column-one-fourth">
+        <img src="images/screen-3.png" alt="screen showing auto accept settings">
+      </div>
+      <div class="column-one-fourth">
+        <img src="images/screen-4.png" alt="screen with stats tab on app">
+      </div>
+    </div>
+    <div class="row center justify-between">
+      <div class="column-one-fourth">
+        <img src="images/switch-icon.png" alt="switch icon" class="small-icon">
+        <h2>App Switching</h2>
+        <p class="margin-top-2rem">Toggles all your apps on and off.</p>
+      </div>
+      <div class="column-one-fourth">
+        <img src="images/filter-icon.png" alt="filter icon" class="small-icon">
+        <h2>Trip Filtering</h2>
+        <p class="margin-top-2rem">Evaluates your trip requests.</p>
+      </div>
+      <div class="column-one-fourth">
+        <img src="images/slider-icon.png" alt="slider icon" class="small-icon">
+        <h2>Service Filters</h2>
+        <p class="margin-top-2rem">Accepts only your ideal trips.</p>
+      </div>
+      <div class="column-one-fourth">
+        <img src="images/bars-icon.png" alt="bars icon" class="small-icon">
+        <h2>Stats + Mileage</h2>
+        <p class="margin-top-2rem">Tracks your trips across all apps.</p>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
