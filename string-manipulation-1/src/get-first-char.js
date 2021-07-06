@@ -1,8 +1,7 @@
 /* exported getFirstChar */
 
-// way to start a process
-//   grab the first character of a string and store it in a new container
-//   return the value of the container holding the character
+// create storage for output and set it equal to the first character in the string
+// return the value of the output storage
 
 function getFirstChar(string) {
   var firstChar = string[0];

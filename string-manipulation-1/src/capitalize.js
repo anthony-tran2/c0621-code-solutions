@@ -1,13 +1,9 @@
 /* exported capitalize */
 
-// way to start a process
-//   take the first character of your word and capitalize it and store the value in a new container
-//   repeating action to lowercase all of the other characters in your word
-//     statement that tells your repeating action where to start from
-//     condition that tells your repeating action when to stop
-//     statement that increases the value of your starting value
-//       take the current character and lowercase it and then add it to the value inside your container and replace the current value in your container with your new value
-//   return the value of your container
+// create storage for output and set it equal to the first character of the string uppercased
+// for each character in the String, starting with the second character:
+//   -add the lowercase character to the current output storage and set the output storage equal to the new value
+// return the output storage
 
 function capitalize(word) {
   var newWord = word[0].toUpperCase();
