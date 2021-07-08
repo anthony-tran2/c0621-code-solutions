@@ -1,0 +1,37 @@
+* {
+  font-family: 'Crete Round', serif;
+  font-size: 36pt;
+}
+
+body {
+  margin: 0;
+  height: 100vh;
+}
+
+.container {
+  margin: auto;
+  height: 100vh;
+}
+
+.row {
+  display: flex;
+  height: 100%;
+}
+
+.true-center {
+  align-items: center;
+  justify-content: center;
+}
+
+.character-underline {
+  border-bottom: black 4px solid;
+}
+
+.correct-character {
+  color: #16cd1a;
+}
+
+.incorrect-character {
+  color: #f80f0f;
+  border-bottom-color: #f80f0f;
+}
