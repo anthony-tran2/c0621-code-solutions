@@ -7,5 +7,5 @@ $openModalButton.addEventListener('click', function (event) {
 });
 
 $noButton.addEventListener('click', function (event) {
-  $popUp.className += 'display-none';
+  $popUp.className += ' ' + 'display-none';
 });
