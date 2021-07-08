@@ -16,13 +16,7 @@
 function capitalizeWord(word) {
   var newWord = '';
   if (word.toLowerCase() === 'javascript') {
-    for (var i = 0; i < word.length; i++) {
-      if (word[i].toLowerCase() === 'j' || word[i].toLowerCase() === 's') {
-        newWord += word[i].toUpperCase();
-      } else {
-        newWord += word[i].toLowerCase();
-      }
-    }
+    newWord += 'JavaScript';
   } else {
     newWord += word[0].toUpperCase();
     for (var k = 1; k < word.length; k++) {
