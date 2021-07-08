@@ -1,0 +1,45 @@
+body {
+  margin: 0;
+  height: 100vh;
+}
+
+.container {
+  margin: 0;
+  height: 100vh;
+}
+
+.background-color-light {
+  background-color: #fef9f1;
+}
+
+.background-color-dark {
+  background-color: #111;
+}
+
+.row {
+  display: flex;
+  height: 100%;
+}
+
+.center {
+  justify-content: center;
+  align-items: center;
+}
+
+.lightBulb-on {
+  border-radius: 50%;
+  width: 300px;
+  height: 300px;
+  background-color: #faea84;
+  box-shadow: 0 0 20px 15px #fef7db;
+  border: none;
+}
+
+.lightBulb-off {
+  border-radius: 50%;
+  width: 300px;
+  height: 300px;
+  background-color: #252525;
+  box-shadow: 0 -3px #040405, 0 -14px 0 9px #0d0d0d;
+  border: none;
+}
