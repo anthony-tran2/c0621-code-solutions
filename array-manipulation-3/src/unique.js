@@ -11,14 +11,14 @@
 
 function unique(array) {
   var output = [];
-  for (var i = 0; i < array.length; i++) {
-    if (output[0] === undefined) {
-      output.push(array[i]);
-    } else {
-      for (var d = 0; d < output.length; d++) {
-        if (output[d] !== array[i]) {
-          output.push(array[i]);
-        }
+  for (var c = 0; c < array.length; c++) {
+    output.push(array[c]);
+  }
+  for (var i = 0; i < output.length; i++) {
+    for (var d = output.length - 1; d >= 0; d--) {
+      if (output[d] === output[i] || d !== i) {
+        output.splice(d, 1);
+        break;
       }
     }
   }
