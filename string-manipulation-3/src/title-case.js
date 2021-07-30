@@ -13,24 +13,42 @@
 //     add the character to the word storage
 // return output
 
-// function titleCase(title) {
-//   var output = '';
-//   var words = title.split(' ');
-//   for (var c = 0; c < words.length; c++) {
-//     for (var a = 0; a < words[c].length; a++) {
-//       if (words[c][a] === '-') {
-//         words[c] = words[c].split('-');
-//       }
-//     }
-//   }
-//   var newWord = '';
-//   for (var i = 0; i < words.length; i++) {
-//     if (words[i].length > 1) {
-//       newWord = words[i][0].toUpperCase();
-//       for
-//     }
-//   }
-// }
+function titleCase(title) {
+  var output = '';
+  var words = title.split(' ');
+  for (var c = 0; c < words.length; c++) {
+    for (var a = 0; a < words[c].length; a++) {
+      if (words[c][a] === '-') {
+        words[c] = words[c].split('-');
+      }
+    }
+  }
+  var newWord = '';
+  for (var i = 0; i < words.length; i++) {
+    if (words[i].length > 1) {
+      newWord = words[i][0][0].toUpperCase();
+      for (var theRest = 1; theRest < words[i][0].length; theRest++) {
+        newWord += words[i][0][theRest];
+      }
+      newWord += '-';
+      newWord = words[i][1][0].toUpperCase();
+      for (var theRestIndex = 1; theRestIndex < words[i][1].length; theRestIndex++) {
+        newWord += words[i][1][theRestIndex];
+      }
+    } else {
+      newWord = words[i][0].toUpperCase();
+      for (var g = 1; g < words[i].length; g++) {
+        newWord += words[i][g];
+      }
+    }
+    output += newWord;
+    newWord = '';
+    if (i + 1 !== words.length) {
+      output += ' ';
+    }
+  }
+  return output;
+}
 
 // function titleCase(title) {
 //   var output = '';
