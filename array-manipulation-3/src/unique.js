@@ -16,9 +16,8 @@ function unique(array) {
   }
   for (var i = 0; i < output.length; i++) {
     for (var d = output.length - 1; d >= 0; d--) {
-      if (output[d] === output[i] || d !== i) {
+      if (output[d] === output[i] && d !== i) {
         output.splice(d, 1);
-        break;
       }
     }
   }
