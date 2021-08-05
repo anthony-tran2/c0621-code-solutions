@@ -4,9 +4,8 @@
 // for each index in the Array, starting at the first one:
 //   add the current index to the Array
 //     for each index in the output Storage, starting at the first one:
-//       if the current index of the array is equal to the current index in the output storage:
+//       if the current index of the array is equal to the current index in the output storage and the two values aren't the exact same ones:
 //         remove the last index in the output storage
-//         end the loop
 // return output storage
 
 function unique(array) {
