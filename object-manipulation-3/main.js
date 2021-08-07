@@ -6,13 +6,9 @@ function cardGame(players, cardsPerHand) {
   } else if (typeof cardsPerHand !== 'number' || (cardsPerHand > Math.round(52 / players.length) || cardsPerHand < 1)) {
     console.log('Invalid amount of cards');
   } else {
-    var people = [];
+    var people = {};
     for (var i = 0; i < players.length; i++) {
-      var newPlayer = {
-        name: players[i],
-        hand: []
-      };
-      people.push(newPlayer);
+      people[players[i]] = [];
     }
     var ranks = ['Ace', 2, 3, 4, 5, 6, 7, 8, 9, 10, 'Jack', 'Queen', 'King'];
     var suits = ['clubs', 'diamonds', 'hearts', 'spades'];
@@ -37,6 +33,11 @@ function cardGame(players, cardsPerHand) {
       shuffledDeck.push(deckOfCards[randomCard]);
       deckOfCards.splice(randomCard, 1);
     }
+    for (var person in people) {
+      people[person] = shuffledDeck.slice(0, 2);
+      shuffledDeck.splice(0, 2);
+    }
+
   }
 }
 
