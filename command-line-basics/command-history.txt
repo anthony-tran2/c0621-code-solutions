@@ -1,0 +1,129 @@
+    1  exit
+    2  pwd
+    3  cd repos/c0621-code-solutions/
+    4  git status
+    5  clear
+    6  git status
+    7  clear
+    8  git switch -c http-messages
+    9  cd http-messages/
+   10  git status
+   11  clear
+   12  https://example.com
+   13  http https://example.com
+   14  clear
+   15  http --verbose https://example.com
+   16  http --body GET https://jsonplaceholder.typicode.com/users > users.json
+   17  http --body GET https://example.com > index.html
+   18  git status
+   19  clear
+   20  cd ..
+   21  git status
+   22  git add http-messages/
+   23  git commit -m "Completed HTTP Messages"
+   24  git push origin http-messages 
+   25  clear
+   26  git status
+   27  git switch -
+   28  clear
+   29  git status
+   30  git pull origin master
+   31  clear
+   32  git status
+   33  git pull origin master
+   34  clear
+   35  git status
+   36  clear
+   37  git switch -c javascript-ajax
+   38  git status
+   39  clear
+   40  git add javascript-ajax/
+   41  git commit -m "Completed JS Ajax"
+   42  git push origin javascript-ajax 
+   43  git switch -
+   44  clear
+   45  exit
+   46  cd repos/c0621-code-solutions/
+   47  git status
+   48  git pull origin master
+   49  git fetch origin
+   50  clear
+   51  git status
+   52  clear
+   53  git switch -c command-line-basics
+   54  git status
+   55  clear
+   56  cd command-line-basics/
+   57  pwd
+   58  clear
+   59  man man
+   60  man cat
+   61  cat laziness.txt impatience.txt hubris.txt > three-virtues.txt
+   62  man cat
+   63  cat three-virtues.txt 
+   64  man ls
+   65  ls lfz-staff/
+   66  ls -aF lfz-staff/contents.txt
+   67  ls -a lfz-staff/contents.txt
+   68  ls -F lfz-staff/contents.txt
+   69  ls -aF lfz-staff/ > lfz-staff/contents.txt
+   70  cat lfz-staff/contents.txt 
+   71  man pwd
+   72  pwd
+   73  pwd > i-was-here.txt
+   74  cat i-was-here.txt 
+   75  man ehco
+   76  man echo
+   77  echo 'Hello, World' > hello.txt
+   78  cat hello.txt 
+   79  ls 
+   80  man touch
+   81  touch tag-youre-it.txt
+   82  touch snoot/ > snoot/boop.txt
+   83  ls snoot/
+   84  man mkdir
+   85  ls
+   86  mkdir parent
+   87  ls
+   88  mkdir -p parent > child > grandchild
+   89  mkdir -p child
+   90  ls parent/
+   91  mkdir -p parent/ > parent/child
+   92  man mkdir
+   93  ls 
+   94  mkdir -p parent/ > parent/child/grandchild/
+   95  mkdir -p parent/ > parent/child/
+   96  mkdir -p parent/ > parent/child
+   97  mkdir -p child > child/grandchild
+   98  mkdir -p parent/child/
+   99  mkdir -p parent/ > child
+  100  mkdir -p parent/ > parent/child/
+  101  mkdir -p child
+  102  mkdir -p child/grandchild
+  103  mkdir -p parent/child/grandchild
+  104  ls -a
+  105  touch .gitkeep parent/child/grandchild/
+  106  touch .gitkeep > parent/child/grandchild/
+  107  touch parent/child/grandchild/ > .gitkeep 
+  108  touch parent/child/grandchild/ > parent/child/grandchild/.gitkeep 
+  109  ls -a
+  110  ls -a parent/child/grandchild/
+  111  ls parent/child/grandchild/
+  112  ls -a parent/child/grandchild/
+  113  man mv
+  114  mv pokiemans/ pokemon
+  115  ls
+  116  man rm
+  117  rm lol.txt 
+  118  ls
+  119  rm -r kill-me/
+  120  ls
+  121  man cp
+  122  cp and-then.txt 
+  123  cp and-then.txt no-and-then.txt
+  124  ls
+  125  cat and-then.txt 
+  126  cat no-and-then.txt 
+  127  man history
+  128  history
+  129  history > command-history.txt
