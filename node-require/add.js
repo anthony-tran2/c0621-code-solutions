@@ -1,2 +1,2 @@
-var sum = (a, b) => parseFloat(a) + parseFloat(b);
+const sum = (a, b) => a + b;
 module.exports = sum;
