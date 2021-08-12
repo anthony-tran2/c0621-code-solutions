@@ -11,17 +11,6 @@ if (process.argv[2] === 'read') {
   dataObject.nextId = dataObject.nextId + 1;
 } else if (process.argv[2] === 'delete') {
   delete notes[process.argv[3]];
-  dataObject.nextId--;
-  const notesStorage = [];
-  for (const key in notes) {
-    notesStorage.push(notes[key]);
-    delete notes[key];
-  }
-  let counter = 1;
-  for (let i = 0; i < notesStorage.length; i++) {
-    notes[`${counter}`] = notesStorage[i];
-    counter++;
-  }
 } else if (process.argv[2] === 'update') {
   notes[`${process.argv[3]}`] = process.argv[4];
 }
