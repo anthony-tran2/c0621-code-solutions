@@ -1,0 +1,58 @@
+img {
+  object-fit: contain;
+}
+
+.hidden {
+  display: none;
+}
+
+.container {
+  max-width: 1000px;
+}
+
+.row {
+  width: 100%;
+  display: flex;
+}
+
+.true-center {
+  align-items: center;
+  justify-content: center;
+}
+
+.justify-between {
+  justify-content: space-between;
+}
+
+.carousel {
+  width: 100%;
+  height: 400px;
+}
+
+.img-column {
+  flex-basis: 60%;
+}
+
+.arrow-column {
+  flex-basis: 20%;
+}
+
+.dot-column {
+  flex-basis: 5%;
+}
+
+.margin-auto {
+  margin: auto;
+}
+
+.font-size-3rem {
+  font-size: 3rem;
+}
+
+.font-size-2rem {
+  font-size: 2rem;
+}
+
+.text-align-right {
+  text-align: right;
+}
