@@ -13,8 +13,7 @@ for (let i = 2; i < process.argv.length; i++) {
     });
     counter++;
     if (counter === process.argv.length - 2) {
-      console.log(output.join(`
-`));
+      console.log(output.join('\n'));
     }
   });
 
