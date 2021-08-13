@@ -30,7 +30,7 @@ const imgSelection = dot => {
       $allImages[i].className = 'hidden';
     }
   }
-  if (parseInt(dot.getAttribute('position')) === $allDots.length) counter = 0; else counter = parseInt(dot.getAttribute('position')) - 1;
+  counter = parseInt(dot.getAttribute('position')) - 1;
   intervalId = setInterval(imgRotation, 3000);
 };
 
