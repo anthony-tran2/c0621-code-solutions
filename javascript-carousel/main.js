@@ -1,13 +1,17 @@
 let counter = 0;
+let nextPosition = 1;
 const $allImages = document.querySelectorAll('img');
 const $allDots = document.querySelectorAll('i.fa-circle');
-const dot1 = document.querySelector('i[position="1"]');
-const dot2 = document.querySelector('i[position="2"]');
-const dot3 = document.querySelector('i[position="3"]');
-const dot4 = document.querySelector('i[position="4"]');
-const dot5 = document.querySelector('i[position="5"]');
+const dotDiv = document.querySelector('i.fa-circle').closest('div.row');
 const leftArr = document.querySelector('i.fa-chevron-left');
 const rightArr = document.querySelector('i.fa-chevron-right');
+
+const position = elements => {
+  for (let i = 0; i < elements.length; i++) {
+    elements[i].setAttribute('position', `${nextPosition}`);
+    if (nextPosition === elements.length) nextPosition = 1; else nextPosition++;
+  }
+};
 
 const imgRotation = () => {
   $allImages[counter].classList.toggle('hidden');
@@ -36,11 +40,9 @@ const imgSelection = dot => {
 
 let intervalId = setInterval(imgRotation, 3000);
 
-dot1.addEventListener('click', () => imgSelection(dot1));
-dot2.addEventListener('click', () => imgSelection(dot2));
-dot3.addEventListener('click', () => imgSelection(dot3));
-dot4.addEventListener('click', () => imgSelection(dot4));
-dot5.addEventListener('click', () => imgSelection(dot5));
+position($allImages);
+position($allDots);
+dotDiv.addEventListener('click', event => imgSelection(event.target));
 leftArr.addEventListener('click', () => {
   clearInterval(intervalId);
   $allImages[counter].classList.toggle('hidden');
