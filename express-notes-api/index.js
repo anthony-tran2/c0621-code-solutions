@@ -41,8 +41,6 @@ app.post('/api/grades', (req, res) => {
   if (newNote.content) {
     data.notes[data.nextId] = newNote;
     data.notes[data.nextId].id = data.nextId;
-    res.status(201).json(data.notes[data.nextId]);
-    data.nextId++;
     fs.writeFile('./data.json', JSON.stringify(data, null, 2), 'utf8', err => {
       if (err) {
         const errorMessage = {
@@ -51,6 +49,8 @@ app.post('/api/grades', (req, res) => {
         res.status(500).json(errorMessage);
       }
     });
+    res.status(201).json(data.notes[data.nextId]);
+    data.nextId++;
   } else {
     const errorMessage = {
       error: 'content is a required field'
@@ -63,7 +63,6 @@ app.delete('/api/grades/:id', (req, res) => {
   if (parseInt(req.params.id) >= 0) {
     if (data.notes[req.params.id]) {
       delete data.notes[req.params.id];
-      res.sendStatus(204);
       fs.writeFile('./data.json', JSON.stringify(data, null, 2), 'utf8', err => {
         if (err) {
           const errorMessage = {
@@ -72,6 +71,7 @@ app.delete('/api/grades/:id', (req, res) => {
           res.status(500).json(errorMessage);
         }
       });
+      res.sendStatus(204);
     } else {
       const errorMessage = {
         error: `cannot find note with id ${req.params.id}`
@@ -90,7 +90,6 @@ app.put('/api/grades/:id', (req, res) => {
   if (parseInt(req.params.id) >= 0 && req.body.content) {
     if (data.notes[req.params.id]) {
       data.notes[req.params.id].content = req.body.content;
-      res.status(200).json(data.notes[req.params.id]);
       fs.writeFile('./data.json', JSON.stringify(data, null, 2), 'utf8', err => {
         if (err) {
           const errorMessage = {
@@ -99,6 +98,7 @@ app.put('/api/grades/:id', (req, res) => {
           res.status(500).json(errorMessage);
         }
       });
+      res.status(200).json(data.notes[req.params.id]);
     } else {
       const errorMessage = {
         error: `cannot find note with id ${req.params.id}`
