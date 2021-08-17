@@ -14,7 +14,6 @@ app.get('/api/grades', (req, res) => {
     array.push(data.notes[key]);
   }
   res.status(200).json(array);
-  save();
 });
 
 app.get('/api/grades/:id', (req, res) => {
@@ -33,7 +32,6 @@ app.get('/api/grades/:id', (req, res) => {
     };
     res.status(400).json(errorMessage);
   }
-  save();
 });
 
 app.use(express.json());
@@ -45,13 +43,15 @@ app.post('/api/grades', (req, res) => {
     data.notes[data.nextId].id = data.nextId;
     res.status(201).json(data.notes[data.nextId]);
     data.nextId++;
+    fs.writeFile('./data.json', JSON.stringify(data, null, 2), 'utf8', err => {
+      if (err) throw err;
+    });
   } else {
     const errorMessage = {
       error: 'content is a required field'
     };
     res.status(400).json(errorMessage);
   }
-  save();
 });
 
 app.delete('/api/grades/:id', (req, res) => {
@@ -59,6 +59,9 @@ app.delete('/api/grades/:id', (req, res) => {
     if (data.notes[req.params.id]) {
       delete data.notes[req.params.id];
       res.sendStatus(204);
+      fs.writeFile('./data.json', JSON.stringify(data, null, 2), 'utf8', err => {
+        if (err) throw err;
+      });
     } else {
       const errorMessage = {
         error: `cannot find note with id ${req.params.id}`
@@ -71,7 +74,6 @@ app.delete('/api/grades/:id', (req, res) => {
     };
     res.status(400).json(errorMessage);
   }
-  save();
 });
 
 app.put('/api/grades/:id', (req, res) => {
@@ -79,6 +81,9 @@ app.put('/api/grades/:id', (req, res) => {
     if (data.notes[req.params.id]) {
       data.notes[req.params.id].content = req.body.content;
       res.status(200).json(data.notes[req.params.id]);
+      fs.writeFile('./data.json', JSON.stringify(data, null, 2), 'utf8', err => {
+        if (err) throw err;
+      });
     } else if (!data.notes[req.params.id]) {
       const errorMessage = {
         error: `cannot find note with id ${req.params.id}`
@@ -103,11 +108,4 @@ app.put('/api/grades/:id', (req, res) => {
       res.status(400).json(errorMessage);
     }
   }
-  save();
 });
-
-const save = () => {
-  fs.writeFile('./data.json', JSON.stringify(data, null, 2), 'utf8', err => {
-    if (err) throw err;
-  });
-};
