@@ -41,15 +41,15 @@ app.post('/api/grades', (req, res) => {
   if (newNote.content) {
     data.notes[data.nextId] = newNote;
     data.notes[data.nextId].id = data.nextId;
+    data.nextId++;
     fs.writeFile('./data.json', JSON.stringify(data, null, 2), 'utf8', err => {
       if (err) {
         const errorMessage = {
           error: 'An unexpected error occured.'
         };
         res.status(500).json(errorMessage);
-      } else res.status(201).json(data.notes[data.nextId]);
+      } else res.status(201).json(data.notes[data.nextId - 1]);
     });
-    data.nextId++;
   } else {
     const errorMessage = {
       error: 'content is a required field'
