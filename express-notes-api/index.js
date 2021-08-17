@@ -47,9 +47,8 @@ app.post('/api/grades', (req, res) => {
           error: 'An unexpected error occured.'
         };
         res.status(500).json(errorMessage);
-      }
+      } else res.status(201).json(data.notes[data.nextId]);
     });
-    res.status(201).json(data.notes[data.nextId]);
     data.nextId++;
   } else {
     const errorMessage = {
@@ -69,9 +68,8 @@ app.delete('/api/grades/:id', (req, res) => {
             error: 'An unexpected error occured.'
           };
           res.status(500).json(errorMessage);
-        }
+        } else res.sendStatus(204);
       });
-      res.sendStatus(204);
     } else {
       const errorMessage = {
         error: `cannot find note with id ${req.params.id}`
@@ -96,9 +94,8 @@ app.put('/api/grades/:id', (req, res) => {
             error: 'An unexpected error occured.'
           };
           res.status(500).json(errorMessage);
-        }
+        } else res.status(200).json(data.notes[req.params.id]);
       });
-      res.status(200).json(data.notes[req.params.id]);
     } else {
       const errorMessage = {
         error: `cannot find note with id ${req.params.id}`
