@@ -44,7 +44,12 @@ app.post('/api/grades', (req, res) => {
     res.status(201).json(data.notes[data.nextId]);
     data.nextId++;
     fs.writeFile('./data.json', JSON.stringify(data, null, 2), 'utf8', err => {
-      if (err) throw err;
+      if (err) {
+        const errorMessage = {
+          error: 'An unexpected error occured.'
+        };
+        res.status(500).json(errorMessage);
+      }
     });
   } else {
     const errorMessage = {
@@ -60,7 +65,12 @@ app.delete('/api/grades/:id', (req, res) => {
       delete data.notes[req.params.id];
       res.sendStatus(204);
       fs.writeFile('./data.json', JSON.stringify(data, null, 2), 'utf8', err => {
-        if (err) throw err;
+        if (err) {
+          const errorMessage = {
+            error: 'An unexpected error occured.'
+          };
+          res.status(500).json(errorMessage);
+        }
       });
     } else {
       const errorMessage = {
@@ -82,18 +92,18 @@ app.put('/api/grades/:id', (req, res) => {
       data.notes[req.params.id].content = req.body.content;
       res.status(200).json(data.notes[req.params.id]);
       fs.writeFile('./data.json', JSON.stringify(data, null, 2), 'utf8', err => {
-        if (err) throw err;
+        if (err) {
+          const errorMessage = {
+            error: 'An unexpected error occured.'
+          };
+          res.status(500).json(errorMessage);
+        }
       });
-    } else if (!data.notes[req.params.id]) {
+    } else {
       const errorMessage = {
         error: `cannot find note with id ${req.params.id}`
       };
       res.status(404).send(errorMessage);
-    } else {
-      const errorMessage = {
-        error: 'An unexpected error occured.'
-      };
-      res.status(500).json(errorMessage);
     }
   } else {
     if (parseInt(req.params.id) >= 0) {
