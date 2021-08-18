@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JavaScript Carousel</title>
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container margin-auto">
+    <div class="carousel">
+      <div class="row true-center">
+        <div class="arrow-column">
+          <i class="fas fa-chevron-left font-size-3rem"></i>
+        </div>
+        <div class="img-column">
+          <div class="row true-center justify-between">
+            <img src="images/001.png" alt="bulbasaur" class="">
+            <img src="images/004.png" alt="charmander" class="hidden">
+            <img src="images/007.png" alt="squirtle" class="hidden">
+            <img src="images/025.png" alt="pikachu" class="hidden">
+            <img src="images/039.png" alt="jigglypuff" class="hidden">
+          </div>
+        </div>
+        <div class="arrow-column  text-align-right">
+          <i class="fas fa-chevron-right font-size-3rem"></i>
+        </div>
+      </div>
+      <div class="row true-center font-size-2rem">
+        <i class="fas fa-circle dot-column"></i>
+        <i class="far fa-circle dot-column"></i>
+        <i class="far fa-circle dot-column"></i>
+        <i class="far fa-circle dot-column"></i>
+        <i class="far fa-circle dot-column"></i>
+      </div>
+    </div>
+  </div>
+  <script src="main.js"></script>
+</body>
+</html>
