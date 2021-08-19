@@ -27,8 +27,7 @@ app.get('/api/grades', (req, res, next) => {
       res.status(200).json(result.rows);
     })
     .catch(err => {
-      // eslint-disable-next-line no-console
-      console.log(err);
+      console.error(err);
       res.status(500).json({
         error: 'An unexpected error occured.'
       });
@@ -74,8 +73,7 @@ app.post('/api/grades', (req, res, next) => {
       res.status(201).json(result.rows[0]);
     })
     .catch(error => {
-      // eslint-disable-next-line no-console
-      console.log(error);
+      console.error(error);
       res.status(500).json({
         error: 'An unexpected error occured.'
       });
@@ -136,8 +134,7 @@ app.put('/api/grades/:gradeId', (req, res, next) => {
       res.status(200).json(result.rows[0]);
     })
     .catch(error => {
-      // eslint-disable-next-line no-console
-      console.log(error);
+      console.error(error);
       res.status(500).json({
         error: 'An unexpected error has occured.'
       });
@@ -166,11 +163,10 @@ app.delete('/api/grades/:gradeId', (req, res, next) => {
         });
         return;
       }
-      res.status(204).json(result.rows[0]);
+      res.sendStatus(204);
     })
     .catch(error => {
-      // eslint-disable-next-line no-console
-      console.log(error);
+      console.error(error);
       res.status(500).json({
         error: 'An unexpected error has occured.'
       });
