@@ -4,17 +4,16 @@ WITH "cte_totalReplacementCost" AS (
   from "films"
   join "inventory" using ("filmId")
   group by "films"."filmId"
-)
-
-WITH "cte_totalRevenue" AS (
+  ),
+"cte_totalRevenue" AS (
   select "films"."filmId",
-         "films"."rentalRate" * count("rentals"."inventoryId") as "totalRevenue"
+         sum("payments"."amount") as "totalRevenue"
   from "films"
   join "inventory" using ("filmId")
   join "rentals" using ("inventoryId")
-  group by "films"."filmId";
+  join "payments" using ("rentalId")
+  group by "films"."filmId"
   )
-
 select "films"."title",
         "films"."description",
         "films"."rating",
