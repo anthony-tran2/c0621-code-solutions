@@ -12,32 +12,17 @@ const newNames = [
   'Donna'
 ];
 
+const evenNumbers2 = input => { if (input % 2) return true; };
+const overFive2 = input => { if (input > 5) return true; };
+const StartWithE2 = input => { if (input.startsWith('E')) return true; };
+const haveD2 = input => { if (input.toLowerCase().includes('d')) return true; };
+
 const filter = (array, predicate) => {
   const output = [];
-  if (predicate === 'evenNumbers') {
-    for (let i = 0; i < array.length; i++) {
-      if (array[i] % 2 === 0) {
-        output.push(array[i]);
-      }
+  for (let i = 0; i < array.length; i++) {
+    if (predicate(array[i])) {
+      output.push(array[i]);
     }
-  } else if (predicate === 'overFive') {
-    for (let i = 0; i < array.length; i++) {
-      if (array[i] > 5) {
-        output.push(array[i]);
-      }
-    }
-  } else if (predicate === 'startsWithE') {
-    for (let i = 0; i < array.length; i++) {
-      if (array[i].startsWith('E')) {
-        output.push(array[i]);
-      }
-    }
-  } else if (predicate === 'haveD') {
-    for (let i = 0; i < array.length; i++) {
-      if (array[i].toLowerCase().includes('d')) {
-        output.push(array[i]);
-      }
-    }
-  } else return console.log('Invalid predicate try again');
+  }
   return output;
 };
