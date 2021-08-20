@@ -26,4 +26,4 @@ const balance = account.reduce((total, value) => {
 }, 0);
 const composite = traits.reduce((bigObject, currentObj) => {
   return Object.assign(bigObject, currentObj);
-});
+}, {});
