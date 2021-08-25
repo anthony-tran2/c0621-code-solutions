@@ -9,7 +9,7 @@ class HotButton extends React.Component {
   }
 
   handleClick() {
-    this.setState(prev => prev.Clicks++);
+    this.setState(prev => ({ Clicks: prev.Clicks + 1 }));
   }
 
   render() {
