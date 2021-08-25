@@ -9,6 +9,20 @@ i {
   font-size: 3rem;
 }
 
+.timer {
+  font-size: 10rem;
+  position: relative;
+  top: 2rem;
+}
+
+.stopwatch {
+  background-color: none;
+  border: 4px black solid;
+  border-radius: 50%;
+  width: 15rem;
+  height: 15rem;
+}
+
 .container {
   width: 800px;
   margin: auto;
@@ -24,4 +38,16 @@ i {
 .true-center {
   align-items: center;
   justify-content: center;
+}
+
+.display-block {
+  display: block;
+}
+
+.margin-0 {
+  margin: 0;
+}
+
+.text-align-center {
+  text-align: center;
 }
