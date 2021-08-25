@@ -12,15 +12,11 @@ export default class Stopwatch extends React.Component {
   }
 
   playPause() {
-    this.setState(prev => {
-      if (prev.timer === 'paused') {
-        this.timer();
-        return { timer: 'play' };
-      } else {
-        this.clear();
-        return { timer: 'paused' };
-      }
-    });
+    if (this.state.timer === 'paused') {
+      this.timer();
+    } else {
+      this.clear();
+    }
   }
 
   reset() {
@@ -37,10 +33,12 @@ export default class Stopwatch extends React.Component {
 
   timer() {
     this.timerId = setInterval(() => this.increment(), 1000);
+    this.setState(prev => ({ timer: 'play' }));
   }
 
   clear() {
     clearInterval(this.timerId);
+    this.setState(prev => ({ timer: 'paused' }));
   }
 
   render() {
