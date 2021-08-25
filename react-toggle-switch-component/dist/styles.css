@@ -1,0 +1,51 @@
+p {
+  display: inline;
+  font-size: 2rem;
+  margin-left: 0.25rem;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+.align-center {
+  align-items: center;
+}
+
+.switch {
+  width: 4rem;
+  height: 2rem;
+  border-radius: 50px;
+  border: black 2px solid;
+}
+
+.circle {
+  border-radius: 50%;
+  width: 1.65rem;
+  height: 1.65rem;
+  background-color: white;
+  border: black 2px solid;
+  position: relative;
+}
+
+.off {
+  background-color: gray;
+}
+
+.on {
+  background-color: rgb(37, 240, 37);
+}
+
+.switch-off {
+  bottom: 0.18rem;
+  right: 0.5rem;
+}
+
+.switch-on {
+  bottom: 0.18rem;
+  left: 1.6rem;
+}
