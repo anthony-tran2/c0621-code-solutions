@@ -25,7 +25,7 @@ import ReactDOM from 'react-dom';
 //       <form onSubmit={this.handleSubmit}>
 //       <label>
 //         Email
-//         <input onChange={this.handleChange} type="text"/>
+//         <input value={this.state.email} onChange={this.handleChange} type="text"/>
 //       </label>
 //       <button type="submit">Submit</button>
 //     </form>
@@ -36,14 +36,20 @@ import ReactDOM from 'react-dom';
 function Form() {
   const [state, setValue] = useState({ email: '' });
 
+  const handleSubmit = e => {
+    e.preventDefault();
+    console.log('state:', state);
+  };
+
+  const handleChange = e => {
+    setValue({ email: e.target.value });
+  };
+
   return (
-    <form onSubmit={e => {
-      e.preventDefault();
-      console.log('state:', state);
-    }}>
+    <form onSubmit={handleSubmit}>
       <label>
         Email
-        <input onChange={e => setValue({ value: e.target.value })} type="text"/>
+        <input value={state.email} onChange={handleChange} type="text"/>
       </label>
       <button type="submit">Submit</button>
     </form>
