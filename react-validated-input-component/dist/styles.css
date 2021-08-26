@@ -1,0 +1,42 @@
+* {
+  font-family: monospace;
+}
+
+i {
+  font-size: 3rem;
+}
+
+p.red {
+  font-size: 1.2rem;
+}
+
+i.fa-times {
+  color: red;
+}
+
+i.fa-check {
+  color: rgb(34, 255, 34);
+}
+
+input {
+  border: black 2px solid;
+  height: 2rem;
+}
+
+.row {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.align-center {
+  align-items: center;
+}
+
+.margin-bottom-0 {
+  margin-bottom: 0;
+}
+
+.red {
+  color: red;
+}
