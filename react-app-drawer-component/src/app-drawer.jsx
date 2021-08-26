@@ -2,7 +2,7 @@ import React from 'react';
 
 function CustomAnchor(props) {
   return (
-    <div className="padding-bottom-1rem">
+    <div className="padding-bottom-1rem menuADiv">
       <a>{props.name}</a>
     </div>
   );
@@ -18,7 +18,7 @@ export default class App extends React.Component {
   }
 
   handleClick(e) {
-    if (e.target.tagName === 'A' || e.target.tagName === 'I') this.setState(prev => ({ modal: !prev.modal }));
+    if (e.target.tagName === 'A' || e.target.tagName === 'I' || e.target.className.includes('tint') || e.target.className.includes('menuADiv')) this.setState(prev => ({ modal: !prev.modal }));
   }
 
   render() {
