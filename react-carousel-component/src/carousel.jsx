@@ -54,19 +54,15 @@ export default class Carousel extends React.Component {
   }
 
   dotMap() {
-    let i = 0;
-    const dotMap = images.map(value => {
-      i++;
-      return <PokeImage key={value.number} index={i - 1} current={this.state.index} />;
+    const dotMap = images.map((value, index) => {
+      return <PokeImage key={value.number} index={index} current={this.state.index} />;
     });
     return dotMap;
   }
 
   currentImg() {
-    let i = 0;
-    const imgMap = images.map(value => {
-      i++;
-      return <PokeImage el='img' key={value.number} index={i - 1} current={this.state.index} name={value.name} src={value.src} />;
+    const imgMap = images.map((value, index) => {
+      return <PokeImage el='img' key={value.number} index={index} current={this.state.index} name={value.name} src={value.src} />;
     });
     return imgMap;
   }
