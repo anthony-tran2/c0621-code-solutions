@@ -50,7 +50,14 @@ export default class Carousel extends React.Component {
     this.state = {
       index: 0
     };
+  }
+
+  componentDidMount() {
     this.intervalId = setInterval(this.changeInterval, 3000);
+  }
+
+  componentWillUnmount() {
+    clearInterval(this.intervalId);
   }
 
   dotMap() {
@@ -75,19 +82,19 @@ export default class Carousel extends React.Component {
 
   handleClick(e) {
     if (e.target.getAttribute('data-index')) {
-      clearInterval(this.intervalId);
+      this.componentWillUnmount();
       this.setState({ index: parseInt(e.target.getAttribute('data-index')) });
-      this.intervalId = setInterval(this.changeInterval, 3000);
+      this.componentDidMount();
     } else if (e.target.getAttribute('class').includes('fa-chevron-left')) {
-      clearInterval(this.intervalId);
+      this.componentWillUnmount();
       if (this.state.index === 0) {
         this.setState({ index: images.length - 1 });
       } else this.setState(prev => ({ index: prev.index - 1 }));
-      this.intervalId = setInterval(this.changeInterval, 3000);
+      this.componentDidMount();
     } else if (e.target.getAttribute('class').includes('fa-chevron-right')) {
-      clearInterval(this.intervalId);
+      this.componentWillUnmount();
       this.changeInterval();
-      this.intervalId = setInterval(this.changeInterval, 3000);
+      this.componentDidMount();
     }
   }
 
