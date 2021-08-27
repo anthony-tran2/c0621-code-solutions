@@ -1,0 +1,55 @@
+* {
+  font-family: monospace;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  width: 100vw;
+  height: 100vh;
+}
+
+p {
+  font-size: 1.1rem;
+}
+
+.container {
+  width: 800px;
+  margin: auto;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  height: 100%;
+  width: 100%;
+}
+
+.header,
+.text {
+  width: 35rem;
+  border: 2px solid black;
+}
+
+.header {
+  height: 5rem;
+  background-color: gray;
+}
+
+.text {
+  height: 10rem;
+  background-color: white;
+}
+
+.true-center {
+  align-items: center;
+  justify-content: center;
+}
+
+.full-height {
+  height: 100vh;
+}
+
+.hidden {
+  display: none !important;
+}
