@@ -13,16 +13,16 @@ class App extends React.Component {
   componentDidMount() {
     fetch('https://jsonplaceholder.typicode.com/users')
       .then(res => {
-        if (!res.ok) return console.error(res); else return res.json();
-      })
-      .then(res => {
-        this.setState(prev => (
-          {
-            users: res,
-            isLoading: !prev.isLoading
-          }));
-      })
-      .catch(err => console.error(err));
+        return res.json()
+          .then(data => {
+            if (res.ok) return { users: data, error: null };
+            return { users: [], error: data };
+          })
+          .then(result => {
+            this.setState({ ...result, isLoading: false });
+          })
+          .catch(err => console.error(err));
+      });
   }
 
   render() {
