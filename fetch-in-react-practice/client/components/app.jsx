@@ -90,7 +90,7 @@ export default class App extends React.Component {
             const newArr = [...this.state.todos];
             for (let i = 0; i < newArr.length; i++) {
               if (newArr[i].todoId === todoId) {
-                newArr[i].isCompleted = !newArr[i].isCompleted;
+                newArr[i] = Object.assign({}, newArr[i], { isCompleted: obj.isCompleted });
               }
             }
             this.setState({ todos: newArr });
