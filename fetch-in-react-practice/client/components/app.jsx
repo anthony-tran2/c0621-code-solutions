@@ -48,9 +48,9 @@ export default class App extends React.Component {
             if (res.ok) return { todos: this.state.todos.concat(newTodo), error: null };
             return { todos: [...this.state.todos], error: data };
           })
+          .then(result => this.setState({ ...result }))
           .catch(err => console.error(err));
       });
-    this.componentDidMount();
     /**
     * Use fetch to send a POST request to `/api/todos`.
     * Then 😉, once the response JSON is received and parsed,
@@ -81,12 +81,22 @@ export default class App extends React.Component {
       .then(res => {
         return res.json()
           .then(data => {
-            if (res.ok) return obj;
+            if (res.ok) {
+              return obj;
+            }
             return { ...obj, error: data };
-          });
-      })
-      .catch(err => console.error(err));
-    this.componentDidMount();
+          })
+          .then(result => {
+            const newArr = [...this.state.todos];
+            for (let i = 0; i < newArr.length; i++) {
+              if (newArr[i].todoId === todoId) {
+                newArr[i].isCompleted = !newArr[i].isCompleted;
+              }
+            }
+            this.setState({ todos: newArr });
+          })
+          .catch(err => console.error(err));
+      });
     /**
      * Find the index of the todo with the matching todoId in the state array.
      * Get its "isCompleted" status.
