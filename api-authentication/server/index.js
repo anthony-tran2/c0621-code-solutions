@@ -63,16 +63,15 @@ app.post('/api/auth/sign-in', (req, res, next) => {
         throw new ClientError(401, 'invalid login');
       } else return res.rows[0];
     })
-    .then(res => {
+    .then(result => {
       argon2
-        .verify(password, res.hashedPassword)
+        .verify(result.hashedPassword, password)
         .then(isMatching => {
-          console.log(isMatching);
           if (!isMatching) {
             throw new ClientError(401, 'invalid login');
           } else {
             const payload = {
-              userId: res.userId,
+              userId: result.userId,
               username: username
             };
 
