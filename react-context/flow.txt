@@ -1,0 +1,28 @@
+User can sign up
+  The user has to click on sign up or register now button to go to view for sign up
+  The user has to type in a username and password and submit it
+    client sends a fetch request on the post method to the server using the route from the app.jsx file
+  The server identifies that this is a sign up and adds the new user to the database and responds with a new user
+    if the user is identified as signing up then it takes you back to the sign in page
+
+User can sign in
+  The user has to type in a username and password
+    The client sends a fetch request on the post method to the server using the route that was assigned on the app.jsx file
+  The server identifies that this is a sign in attempt checks to see if there is a username and password and if the username and password matches the one in the db
+    if the password matches the server responds with a token and the user payload
+  If the action is not a sign up and the result.user and result.token exist, the handleSignIn method of the App constructor is called
+  This stores the users token in the local storage and sets the state to the user payload
+  The page then re renders and now that the route is not an empty string,
+    You load into the home page
+
+User can stay signed in (even if they refresh the page).
+  When the user reloads the page and the page loads back in
+    if the current path is an empty string and the user is not equal to null\
+    the home page gets rendered
+  otherwise the path gets set to sign in and the app rerenders on the sign in page
+
+
+User can sign out.
+  When the user clicks the sign out button
+  the handleSignOut method of the App constructor is called and the user payload gets set to null and the token is erased from local storage
+  Once the state updates the page is rerendered and set to sign in after being rejected on the home.jsx file
