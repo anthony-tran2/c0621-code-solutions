@@ -16,8 +16,7 @@ export default class App extends React.Component {
     fetch('/api/uploads', init)
       .then(result => {
         console.log(result);
-        document.querySelector('#caption').value = '';
-        document.querySelector('input[name="image"]').value = '';
+        event.target.reset();
       })
       .catch(err => {
         console.error(err);
