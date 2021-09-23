@@ -1,11 +1,10 @@
 /* exported getTail */
 
 function getTail(list) {
-  let copy = list;
   let tail = null;
-  while (copy) {
-    tail = copy.data;
-    copy = copy.next;
+  while (list) {
+    tail = list.data;
+    list = list.next;
   }
   return tail;
 }

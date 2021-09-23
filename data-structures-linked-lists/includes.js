@@ -1,11 +1,10 @@
 /* exported includes */
 
 function includes(list, value) {
-  let copy = list;
-  while (copy.next) {
-    if (copy.data === value) return true;
-    copy = copy.next;
+  while (list.next) {
+    if (list.data === value) return true;
+    list = list.next;
   }
-  if (copy.data === value) return true;
+  if (list.data === value) return true;
   return false;
 }
